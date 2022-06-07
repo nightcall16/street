@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<style>.abc{display: flex; justify-content: center; } 
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="abc"> <input id="in"><button onclick="findip()">find ip!</button><div id="out"></div></div>
+<script>
+    function findip(){
+        $.get("https://ipapi.co/"+document.getElementById("in").value+"/json",function(data){
+            document.getElementById("out").innerHTML="ip:"+data.ip+"<br> Location:"+data.city+","+data.region+","+data.country_name+"<br> TLD:"+data.country_tld;
+
+        }
+        )
+    }
+
+</script>
